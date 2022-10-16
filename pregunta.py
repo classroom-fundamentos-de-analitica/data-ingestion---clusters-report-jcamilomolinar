@@ -16,7 +16,8 @@ def ingest_data():
     text = ""
     for lin in col4:
         if isinstance(lin, str): text += lin+" "
-        else: 
+        else:
+            text = ", ".join([" ".join(x.split()) for x in text.split(",")])
             col4Proc.append(text)
             text = ""
             continue
