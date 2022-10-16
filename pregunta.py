@@ -3,7 +3,7 @@ import pandas as pd
 def ingest_data():
 
     df = pd.read_fwf(
-        "clusters_report.txt", widths = [9, 16, 16, 76], header = None,
+        "clusters_report.txt", widths = [9, 16, 16, 80], header = None,
         names = ["cluster","cantidad_de_palabras_clave","porcentaje_de_palabras_clave", "-"],
         skip_blank_lines = False, converters = {"porcentaje_de_palabras_clave": 
         lambda x: x.rstrip(" %").replace(",",".")}).drop([0,1,2,3], axis=0)
